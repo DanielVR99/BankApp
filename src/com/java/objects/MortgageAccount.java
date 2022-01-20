@@ -1,4 +1,8 @@
-public class MortgageAccount extends Account{
+package com.java.objects;
+
+import com.java.objects.Account;
+
+public class MortgageAccount extends Account {
     private float debt;
     private float monthPay;
     private float interest;
@@ -12,7 +16,7 @@ public class MortgageAccount extends Account{
 
     @Override
     public String toString() {
-        return "MortgageAccount{" +
+        return "com.java.objects.MortgageAccount{" +
                 "debt=" + debt +
                 ", monthPay=" + monthPay +
                 ", interest=" + interest +

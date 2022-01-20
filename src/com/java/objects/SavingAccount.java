@@ -1,4 +1,8 @@
-public class SavingAccount extends Account{
+package com.java.objects;
+
+import com.java.objects.Account;
+
+public class SavingAccount extends Account {
     private float money;
     private float interestRate;
 
@@ -10,7 +14,7 @@ public class SavingAccount extends Account{
 
     @Override
     public String toString() {
-        return "SavingAccount{" +
+        return "com.java.objects.SavingAccount{" +
                 "money=" + money +
                 ", interestRate=" + interestRate +
                 ", accountNumber=" + super.getAccountNumber() +

@@ -1,3 +1,5 @@
+package com.java.objects;
+
 public class CurrentAccount extends Account{
     private float money;
 
@@ -8,7 +10,7 @@ public class CurrentAccount extends Account{
 
     @Override
     public String toString() {
-        return "CurrentAccount{" +
+        return "com.java.objects.CurrentAccount{" +
                 "money=" + money +
                 ", accountNumber=" + super.getAccountNumber() +
                 ", accountType=" + super.getAccountType() +

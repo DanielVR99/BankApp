@@ -1,3 +1,5 @@
+import com.java.objects.*;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -38,7 +40,7 @@ public class mainClass {
                         String name = reader.readLine();
                         Client cliente = new Client(name, clientes.size());
                         clientes.add(cliente);
-                        System.out.println("New Client:");
+                        System.out.println("New com.java.objects.Client:");
                         System.out.println(cliente);
                     } catch (Exception e){
                         System.out.println("Enter a valid input");
@@ -49,9 +51,9 @@ public class mainClass {
                         System.out.println("Enter the client number:");
                         String clientNum = reader.readLine();
                         System.out.println("What kind of account:\n" +
-                                "1) Saving Account\n" +
-                                "2) Current Account\n" +
-                                "3) Mortgage Account\n");
+                                "1) Saving com.java.objects.Account\n" +
+                                "2) Current com.java.objects.Account\n" +
+                                "3) Mortgage com.java.objects.Account\n");
                         String accType = reader.readLine();
                         if (Objects.equals(accType, "1")) {
                             System.out.println("Enter money: ");
@@ -80,12 +82,12 @@ public class mainClass {
                 if (op == 3) {
                     try {
                         System.out.println("What kind of transaction:\n" +
-                                "1) Add money to Saving Account\n" +
-                                "2) Send Money to Current Account\n" +
-                                "3) Pay Mortgage Account\n");
+                                "1) Add money to Saving com.java.objects.Account\n" +
+                                "2) Send Money to Current com.java.objects.Account\n" +
+                                "3) Pay Mortgage com.java.objects.Account\n");
                         String accType = reader.readLine();
                         if (Objects.equals(accType, "1")) {
-                            System.out.println("Account number: ");
+                            System.out.println("com.java.objects.Account number: ");
                             String sender = reader.readLine();
                             System.out.println("Quantity of money: ");
                             String money = reader.readLine();
@@ -96,7 +98,7 @@ public class mainClass {
                                 }
                             }
                             if (cuenta1 == -1){
-                                System.out.println("Account number is wrong");
+                                System.out.println("com.java.objects.Account number is wrong");
                             } else {
                                 Transaction transaction = new Transaction(transactions.size(), cuenta1, cuenta1, Float.parseFloat(money));
                                 transactions.add(transaction);
@@ -108,9 +110,9 @@ public class mainClass {
                             }
                         }
                         if (Objects.equals(accType, "2")) {
-                            System.out.println("Account that sends: ");
+                            System.out.println("com.java.objects.Account that sends: ");
                             String sender = reader.readLine();
-                            System.out.println("Account that receives: ");
+                            System.out.println("com.java.objects.Account that receives: ");
                             String receives = reader.readLine();
                             System.out.println("Quantity of money: ");
                             String money = reader.readLine();
@@ -137,7 +139,7 @@ public class mainClass {
                             }
                         }
                         if (Objects.equals(accType, "3")) {
-                            System.out.println("Account number: ");
+                            System.out.println("com.java.objects.Account number: ");
                             String sender = reader.readLine();
                             int cuenta1 = -1;
                             for (Account cuenta : accounts) {
@@ -146,7 +148,7 @@ public class mainClass {
                                 }
                             }
                             if (cuenta1 == -1){
-                                System.out.println("Account number is wrong");
+                                System.out.println("com.java.objects.Account number is wrong");
                             } else {
                                 Transaction transaction = new Transaction(transactions.size(), cuenta1, cuenta1, 500);
                                 transactions.add(transaction);

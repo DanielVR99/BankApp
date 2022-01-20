@@ -1,3 +1,5 @@
+package com.java.objects;
+
 public abstract class Account {
     private int accountNumber;
     private int clientNum;
@@ -28,9 +30,5 @@ public abstract class Account {
 
     public int getClientNum() {
         return clientNum;
-    }
-
-    public void setClientNum(int clientNum) {
-        this.clientNum = clientNum;
     }
 }
