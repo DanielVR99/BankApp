@@ -1,5 +1,6 @@
 package com.java.objects;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Transaction {
@@ -7,10 +8,10 @@ public class Transaction {
     private int accNum1;
     private int accNum2;
     private float qty;
-    private Date date;
+    private LocalDateTime date;
     private String transactionType;
 
-    public Transaction(int transactionNum, int accNum1, int accNum2, float qty, Date date, String transactionType) {
+    public Transaction(int transactionNum, int accNum1, int accNum2, float qty, LocalDateTime date, String transactionType) {
         this.transactionNum = transactionNum;
         this.accNum1 = accNum1;
         this.accNum2 = accNum2;

@@ -6,8 +6,8 @@ public class Client {
     private String clientName;
     private int clientNumber;
     private String email;
-    private ArrayList<Account> accounts;
-    private ArrayList<Transaction> transactions;
+    private ArrayList<Account> accounts = new ArrayList<Account>();
+    private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
     public Client(String clientName, int clientNumber, String email) {
         this.clientName = clientName;
@@ -60,7 +60,7 @@ public class Client {
         return transactions;
     }
 
-    public void setTransactions(Transaction transaction) {
+    public void addTransaction(Transaction transaction) {
         this.transactions.add(transaction);
     }
 }
