@@ -57,6 +57,7 @@ public class CustomerService {
                     System.out.println("Enter the email:");
                     String email = reader.readLine();
                     if(clientDAO.findClient(email)){
+                        clientActual = new Client("",-1, "");
                         clientActual.setEmail(email);
                         clientActual = clientDAO.findClient(clientActual);
                         System.out.println("Welcome " + clientActual.getClientName());
@@ -104,7 +105,7 @@ public class CustomerService {
                                         clientActual.addAccount(cuenta);
                                         clientDAO.replaceClient(clientActual);
                                     }
-                                    if (Objects.equals(accType, "2")) {
+                                    else if (Objects.equals(accType, "2")) {
                                         System.out.println("Enter money: ");
                                         String money = reader.readLine();
                                         Account cuenta = new CurrentAccount(accountDAO.getSize(), clientActual.getClientNumber(), Float.parseFloat(money));
@@ -112,7 +113,7 @@ public class CustomerService {
                                         clientActual.addAccount(cuenta);
                                         clientDAO.replaceClient(clientActual);
                                     }
-                                    if (Objects.equals(accType, "3")) {
+                                    else if (Objects.equals(accType, "3")) {
                                         System.out.println("Enter debt: ");
                                         String money = reader.readLine();
                                         Account cuenta = new MortgageAccount(accountDAO.getSize(), clientActual.getClientNumber(), Float.parseFloat(money), 500, 0.2f);
@@ -145,7 +146,7 @@ public class CustomerService {
                                             }
                                         }
                                         if (cuenta1 == -1){
-                                            System.out.println("com.java.objects.Account number is wrong");
+                                            System.out.println("Account number is wrong");
                                         } else {
                                             SavingAccount acc1 = (SavingAccount) accountDAO.getAccount(cuenta1);
                                             acc1.addMoney(Float.parseFloat(money));
@@ -159,9 +160,9 @@ public class CustomerService {
                                         }
                                     }
                                     if (Objects.equals(accType, "2")) {
-                                        System.out.println("com.java.objects.Account that sends: ");
+                                        System.out.println("Account that sends: ");
                                         String sender = reader.readLine();
-                                        System.out.println("com.java.objects.Account that receives: ");
+                                        System.out.println("Account that receives: ");
                                         String receives = reader.readLine();
                                         System.out.println("Quantity of money: ");
                                         String money = reader.readLine();
@@ -194,7 +195,7 @@ public class CustomerService {
                                         }
                                     }
                                     if (Objects.equals(accType, "3")) {
-                                        System.out.println("com.java.objects.Account number: ");
+                                        System.out.println("Account number: ");
                                         String sender = reader.readLine();
                                         int cuenta1 = -1;
                                         for (Account cuenta :  accountDAO.getAccounts()) {
@@ -203,7 +204,7 @@ public class CustomerService {
                                             }
                                         }
                                         if (cuenta1 == -1){
-                                            System.out.println("com.java.objects.Account number is wrong");
+                                            System.out.println("Account number is wrong");
                                         } else {
                                             LocalDateTime date = java.time.LocalDateTime.now();
                                             Transaction transaction = new Transaction(transactionDAO.getTransactionNum(), cuenta1, cuenta1, 500, date, "credit");
